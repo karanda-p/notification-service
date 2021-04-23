@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
+import ru.itfbgroup.notificationservice.component.TemplateProperty;
 import ru.itfbgroup.notificationservice.model.NotificationMessage;
 
 @Service
@@ -11,9 +12,12 @@ import ru.itfbgroup.notificationservice.model.NotificationMessage;
 public class NotificationService {
 
     private final JavaMailSender mailSender;
+    private final TemplateProperty templateProperty;
 
     public void sendNotificationMessage(NotificationMessage message) {
 
+        TemplateProperty.Template template = templateProperty.getTemplates().get(message.getTemplate());
+//        MimeMailMessage
 //        System.out.println(message);
         SimpleMailMessage msg = new SimpleMailMessage();
         msg.setTo(message.getEmail());

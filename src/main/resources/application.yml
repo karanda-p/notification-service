@@ -18,3 +18,18 @@ spring:
           writetimeout: 5000
           starttls:
             enable: true
+
+app:
+  templates:
+    create:
+      path: templates/create.ftl
+      subject: Новый заказ
+    delivery:
+      path: templates/delivery.ftl
+      subject: Заказ передан в доставку
+    done:
+      path: templates/done.ftl
+      subject: Заказ доставлен
+    paid:
+      path: templates/paid.ftl
+      subject: Заказ оплачен
