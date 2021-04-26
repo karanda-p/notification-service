@@ -22,14 +22,14 @@ spring:
 app:
   templates:
     create:
-      path: templates/create.ftl
+      path: create.ftl
       subject: Новый заказ
     delivery:
-      path: templates/delivery.ftl
+      path: delivery.ftl
       subject: Заказ передан в доставку
     done:
-      path: templates/done.ftl
+      path: done.ftl
       subject: Заказ доставлен
     paid:
-      path: templates/paid.ftl
+      path: paid.ftl
       subject: Заказ оплачен

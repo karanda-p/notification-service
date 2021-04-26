@@ -8,7 +8,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class NotificationMessage {
@@ -19,10 +18,14 @@ public class NotificationMessage {
     private static final String DONE = "done";
 
     private String template;
-    private Map<String, Object> attributes;
+    private String email;
+    private boolean emailEnabled;
+    private String phone;
+    private boolean phoneEnabled;
+    private Map<String, String> attributes;
     private List<Attachment> attachments;
 
-    public void addAttributes(String name, Object value) {
+    public void addAttributes(String name, String value) {
         if (this.attributes == null) {
             attributes = new HashMap<>();
         }
