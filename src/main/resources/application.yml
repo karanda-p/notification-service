@@ -18,6 +18,11 @@ spring:
           writetimeout: 5000
           starttls:
             enable: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
 app:
   templates:
@@ -33,3 +38,7 @@ app:
     paid:
       path: paid.ftl
       subject: Заказ оплачен
+
+message:
+  queue: queue
+  routing-key: notification

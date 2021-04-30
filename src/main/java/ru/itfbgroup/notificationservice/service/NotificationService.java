@@ -41,16 +41,18 @@ public class NotificationService {
         helper.setTo(message.getEmail());
         helper.setText(html, true);
         helper.setSubject(template.getSubject());
-
+        File file = null;
         if (attachments != null) {
             for (Attachment attachment : attachments) {
                 byte[] decodedBytes = Base64.getDecoder().decode(attachment.getContent());
-                File file = new File(attachment.getFileName());
+                file = new File(attachment.getFileName());
                 FileUtils.writeByteArrayToFile(file, decodedBytes);
                 helper.addAttachment(attachment.getFileName(), file);
-            }
-        }
 
+            }
+
+        }
         mailSender.send(msg);
+        file.delete();
     }
 }
