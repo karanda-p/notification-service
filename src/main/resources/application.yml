@@ -40,5 +40,5 @@ app:
       subject: Заказ оплачен
 
 message:
-  queue: queue
-  routing-key: notification
+  queue: notificationQueue
+  routing-key: message.notification
