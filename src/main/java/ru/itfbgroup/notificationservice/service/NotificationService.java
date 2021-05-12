@@ -53,6 +53,6 @@ public class NotificationService {
 
         }
         mailSender.send(msg);
-        file.delete();
+        if (file != null) file.delete();
     }
 }

@@ -10,14 +10,11 @@ import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import ru.itfbgroup.notificationservice.service.NotificationService;
 
 @Configuration
 @Slf4j
 @RequiredArgsConstructor
-public class ListenerConfiguration {
-
-    private final NotificationService notificationService;
+public class ListenerConfig {
 
     @Value("${message.queue}")
     private String queueName;
